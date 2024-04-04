@@ -26,8 +26,6 @@ void ACPP_PuzzleGameMode_CB::InitGame(const FString& MapName, const FString& Opt
 
 	UCPP_GameInstance_CB* GameInstance = Cast<UCPP_GameInstance_CB>(GetGameInstance());
 	if (GameInstance) {
-
-		//GameInstance->PauseTimer();
 		GameInstance->IsPlayerInPuzzle = true;
 		GetWorld()->GetTimerManager().SetTimer(TimerHandle_ElapsedTimeUpdate, this, &ACPP_PuzzleGameMode_CB::UpdateElapsedTime, 1.0f, true);
 	
@@ -43,6 +41,28 @@ void ACPP_PuzzleGameMode_CB::Tick(float DeltaSeconds)
 
 void ACPP_PuzzleGameMode_CB::CheckPuzzleTimeExceeded()
 {
+	//Specify timer amount for each different puzzle level
+	UWorld* World = GetWorld();
+	FString LevelName = World->GetMapName();
+	LevelName.RemoveFromStart(World->StreamingLevelsPrefix);
+	if (LevelEnumMapping.Contains(LevelName))
+	{
+		switch (LevelEnumMapping[LevelName]) {
+		case ELevelToLoad::PuzzleLevel1:
+			PuzzleTimer = PuzzleTimer_Level1;
+			break;
+		case ELevelToLoad::PuzzleLevel2:
+			PuzzleTimer = PuzzleTimer_Level2;
+			break;
+		case ELevelToLoad::PuzzleLevel3:
+			PuzzleTimer = PuzzleTimer_Level3;
+			break;
+		default:
+			UE_LOG(LogTemp, Warning, TEXT("Invalid Level"));
+			break;
+		}
+	}
+
 	if (ElapsedPuzzleTime >= PuzzleTimer) {
 		IsPuzzleTimeExceeded = true;
 		//Deplete stealth if puzzle time limit exceeded

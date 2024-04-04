@@ -21,16 +21,44 @@ public:
 	//=================================================================================================
 
 	/// <summary>
+	/// Map of level enum to the name of the level map
+	/// </summary>	
+	TMap<FString, ELevelToLoad> LevelEnumMapping = {
+		{TEXT("L_Puzzle_1"), ELevelToLoad::PuzzleLevel1},
+		{TEXT("L_Puzzle_2"), ELevelToLoad::PuzzleLevel2},
+		{TEXT("L_Puzzle_3"), ELevelToLoad::PuzzleLevel3}
+		// Add more mappings as needed
+	};
+
+	/// <summary>
 	/// Amount of time elapsed in puzzle
 	/// </summary>
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Puzzle")
 	float ElapsedPuzzleTime;
 	
 	/// <summary>
-	/// Maximum amount of time allowed for puzzle in seconds
+	/// Maximum amount of time allowed for puzzle level 1 in seconds
 	/// </summary>
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Puzzle")
-	float PuzzleTimer{ 30.0f };
+	float PuzzleTimer_Level1{ 180.0f };	
+	
+	/// <summary>
+	/// Maximum amount of time allowed for puzzle level 2 in seconds
+	/// </summary>
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Puzzle")
+	float PuzzleTimer_Level2{ 300.0f };
+	
+	/// <summary>
+	/// Maximum amount of time allowed for puzzle level 3 in seconds
+	/// </summary>
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Puzzle")
+	float PuzzleTimer_Level3{ 420.0f };
+	
+	/// <summary>
+	/// Variable to assign level-specific timer value to
+	/// </summary>
+	UPROPERTY(BlueprintReadWrite, Category = "Puzzle")
+	float PuzzleTimer{ 300.0f };
 	
 	/// <summary>
 	/// Amount of stealth to deplete per tick
