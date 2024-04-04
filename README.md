@@ -3,6 +3,8 @@
 "Ctrl Alt Escape" is a 3D Top-Down Puzzle RPG made as a C++ based project in Unreal Engine 5.  This game was made within 6 weeks from game conceptualization and planning, to development and playtesting.
 * **GENRES**: 3D, Sci-Fi, Thriller, Stealth, Puzzle, RPG
 * **DEVELOPERS**: Celina Basa, Denver Reynolds, George Sleeth
+
+**This repo contains only the source files, the latest build playable on Windows will be available for download on my [itch.io](https://cbasa.itch.io/) page on: **date TBC***
 ## Plot Summary
 The player assumes the role of Ethan, a talented programmer who lands a coveted position at OmniCorp, a prestigious AI company.  Soon after starting the job, Ethan receives cryptic instructions from a mysterious guide known only as "The Whisper".  The Whisper reveals that OmniCorp is controlled by a malevolent AI, and Ethan must hack into the main office to expose its true nature.
 
