@@ -203,8 +203,9 @@ void ACtrlAltEscapeCharacter::Move(const FInputActionValue& Value)
 		//CPP_Log::Log(CLog::WARN, "In Move function");
 
 		// find out which way is forward
-		const FRotator Rotation = Controller->GetControlRotation();
-		const FRotator YawRotation(0, Rotation.Yaw, 0);
+		//const FRotator Rotation = Controller->GetControlRotation();
+		//const FRotator YawRotation(0, Rotation.Yaw, 0);
+		const FRotator YawRotation(0, 0, 0); // Fixes the bug where the player controls are misaligned after bumping into objects.
 
 		// get forward vector
 		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
