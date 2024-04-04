@@ -80,6 +80,8 @@ void UCPP_GameInstance_CB::RestartAtCurrentLevel()
 		break;
 	case ELevelToLoad::OfficeLevel2:
 		//UE_LOG(LogTemp, Warning, TEXT("Restarting from Office Level 2"));
+		//Reset admin access if continuing from office level 2
+		HasAdministratorAccess = false;
 		UGameplayStatics::OpenLevel(this, "L_Office2");
 		break;
 	default:
