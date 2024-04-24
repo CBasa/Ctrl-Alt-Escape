@@ -3,7 +3,7 @@
 
 # Ctrl Alt Escape  
 ### * *Files appended with **'_CB'** were created by myself*  
-### * *This repo contains only the source files, the latest build playable on Windows will be available for download on my [itch.io](https://cbasa.itch.io/) page by: 10<sup>th</sup> May 2024*  
+### * *This repo contains only the source files, the latest build playable on Windows is available for download on my [itch.io](https://cbasa.itch.io/ctrl-alt-escape) page* 
 <br />  
 
 **Ctrl Alt Escape** is a 3D Top-Down Puzzle RPG made as a C++ based project in Unreal Engine 5.  This game was made within 6 weeks from game conceptualization and planning, to development and playtesting.  
